@@ -33,3 +33,39 @@
   },
   "packageManager": "pnpm@10.14.0"
 }
+{
+  "name": "bond-wm-git",
+  "private": true,
+  "scripts": {
+    "startx": "unset XDG_SEAT && Xephyr -br -ac -noreset -screen 1600x900 :1",
+    "startx-multi": "unset XDG_SEAT && Xephyr -br -ac -noreset -screen 1000x700 -screen 1000x600 +xinerama :1",
+    "start": "pnpm -C ./apps/wm run start",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "lint": "eslint .",
+    "setup": "pnpm install",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-prettier": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "globals": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  },
+  "pnpm": {
+    "overrides": {
+      "redux": "^5.0.0"
+    }
+  },
+  "packageManager": "pnpm@10.14.0"
+}
+
